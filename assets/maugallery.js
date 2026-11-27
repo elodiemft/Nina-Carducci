@@ -111,13 +111,16 @@
     openLightBox(element, lightboxId) {
       $(`#${lightboxId}`)
         .find(".lightboxImage")
-        .attr("src", element.attr("src"));
+        .attr("src", element.attr("data-full") || element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
+        if (
+          ($(this).attr("data-full") || $(this).attr("src")) ===
+          $(".lightboxImage").attr("src")
+        ) {
           activeImage = $(this);
         }
       });
@@ -140,19 +143,25 @@
         next = null;
 
       $(imagesCollection).each(function (i) {
-        if ($(activeImage).attr("src") === $(this).attr("src")) {
+        if ($(activeImage).is($(this))) {
           index = i;
         }
       });
       next =
         imagesCollection[index - 1] ||
         imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      $(".lightboxImage").attr(
+        "src",
+        $(next).attr("data-full") || $(next).attr("src"),
+      );
     },
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
+        if (
+          ($(this).attr("data-full") || $(this).attr("src")) ===
+          $(".lightboxImage").attr("src")
+        ) {
           activeImage = $(this);
         }
       });
@@ -175,12 +184,15 @@
         next = null;
 
       $(imagesCollection).each(function (i) {
-        if ($(activeImage).attr("src") === $(this).attr("src")) {
+        if ($(activeImage).is($(this))) {
           index = i;
         }
       });
       next = imagesCollection[index + 1] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      $(".lightboxImage").attr(
+        "src",
+        $(next).attr("data-full") || $(next).attr("src"),
+      );
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
