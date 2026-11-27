@@ -7,6 +7,48 @@
       name="description"
       content="Découvrez Nina Carducci, photographe professionnelle à Bordeaux, spécialisée dans les mariages, les portraits, les concerts et la photographie d'entreprise."
     />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Nina Carducci - Photographe professionnelle à Bordeaux"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez Nina Carducci, photographe professionnelle à Bordeaux, spécialisée dans les mariages, les portraits, les concerts et la photographie d'entreprise."
+    />
+    <meta
+      property="og:url"
+      content="https://elodiemft.github.io/Nina-Carducci/"
+    />
+    <meta
+      property="og:image"
+      content="https://elodiemft.github.io/Nina-Carducci/assets/images/nina-800.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="Portrait de Nina Carducci, photographe professionnelle"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Nina Carducci" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Nina Carducci - Photographe professionnelle à Bordeaux"
+    />
+    <meta
+      name="twitter:description"
+      content="Découvrez Nina Carducci, photographe professionnelle à Bordeaux, spécialisée dans les mariages, les portraits, les concerts et la photographie d'entreprise."
+    />
+    <meta
+      name="twitter:image"
+      content="https://elodiemft.github.io/Nina-Carducci/assets/images/nina-800.webp"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Portrait de Nina Carducci, photographe professionnelle"
+    />
+
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap-custom.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,9 +78,9 @@
     <script defer src="./assets/maugallery.min.js"></script>
     <script defer src="./assets/scripts.js"></script>
   </head>
-  <body>
+  <body itemscope itemtype="https://schema.org/LocalBusiness">
     <div class="top-header">
-      <h3 class="name">Nina Carducci</h3>
+      <h3 class="name" itemprop="name">Nina Carducci</h3>
       <div class="nav">
         <ul>
           <li><a href="#about">À propos</a></li>
@@ -48,6 +90,7 @@
           <li>
             <a
               class="social-link"
+              itemprop="sameAs"
               href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
               target="_blank"
               ><img src="assets/images/instagram.png" alt=""
@@ -142,6 +185,7 @@
     <div id="about">
       <div class="picture left">
         <img
+          itemprop="image"
           src="./assets/images/nina-800.webp"
           srcset="
             ./assets/images/nina-800.webp 800w,
@@ -391,6 +435,58 @@
           <p>
             N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures
           </p>
+          <div
+            itemprop="address"
+            itemscope
+            itemtype="https://schema.org/PostalAddress"
+          >
+            <p>
+              <span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>,
+              <span itemprop="postalCode">33200</span>
+              <span itemprop="addressLocality">Bordeaux</span>
+              <meta itemprop="addressCountry" content="FR" />
+            </p>
+          </div>
+          <meta itemprop="telephone" content="+33556677889" />
+          <meta itemprop="priceRange" content="50 € - 400 €" />
+          <div
+            itemprop="contactPoint"
+            itemscope
+            itemtype="https://schema.org/ContactPoint"
+          >
+            <meta itemprop="contactType" content="service client" />
+
+            <p>
+              Téléphone :
+              <a itemprop="telephone" href="tel:+33556677889">
+                05 56 67 78 89
+              </a>
+            </p>
+
+            <div
+              itemprop="hoursAvailable"
+              itemscope
+              itemtype="https://schema.org/OpeningHoursSpecification"
+            >
+              <meta itemprop="dayOfWeek" content="https://schema.org/Monday" />
+              <meta itemprop="dayOfWeek" content="https://schema.org/Tuesday" />
+              <meta
+                itemprop="dayOfWeek"
+                content="https://schema.org/Wednesday"
+              />
+              <meta
+                itemprop="dayOfWeek"
+                content="https://schema.org/Thursday"
+              />
+              <meta itemprop="dayOfWeek" content="https://schema.org/Friday" />
+
+              <p>
+                Disponible par téléphone du lundi au vendredi, de
+                <time itemprop="opens" datetime="10:00">10 h</time> à
+                <time itemprop="closes" datetime="19:00">19 h</time>.
+              </p>
+            </div>
+          </div>
           <form action="" method="post">
             <label>Nom</label>
             <input type="text" name="nom" id="nom" />
